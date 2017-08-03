@@ -14,6 +14,9 @@
 		1435CD331F33D2B6005E3AF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1435CD311F33D2B6005E3AF7 /* LaunchScreen.storyboard */; };
 		1435CD3E1F33D2B6005E3AF7 /* custom_textfield_class_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435CD3D1F33D2B6005E3AF7 /* custom_textfield_class_testTests.swift */; };
 		1435CD491F33D2B6005E3AF7 /* custom_textfield_class_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435CD481F33D2B6005E3AF7 /* custom_textfield_class_testUITests.swift */; };
+		1435CD571F33D315005E3AF7 /* CustomTextFieldClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435CD561F33D315005E3AF7 /* CustomTextFieldClass.swift */; };
+		1435CD5A1F33D34A005E3AF7 /* BounceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435CD581F33D34A005E3AF7 /* BounceButton.swift */; };
+		1435CD5B1F33D34A005E3AF7 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435CD591F33D34A005E3AF7 /* DesignableButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		1435CD441F33D2B6005E3AF7 /* custom-textfield-class-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "custom-textfield-class-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1435CD481F33D2B6005E3AF7 /* custom_textfield_class_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = custom_textfield_class_testUITests.swift; sourceTree = "<group>"; };
 		1435CD4A1F33D2B6005E3AF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1435CD561F33D315005E3AF7 /* CustomTextFieldClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldClass.swift; sourceTree = "<group>"; };
+		1435CD581F33D34A005E3AF7 /* BounceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
+		1435CD591F33D34A005E3AF7 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 		1435CD271F33D2B6005E3AF7 /* custom-textfield-class-test */ = {
 			isa = PBXGroup;
 			children = (
+				1435CD5C1F33D350005E3AF7 /* Custom Class */,
 				1435CD281F33D2B6005E3AF7 /* AppDelegate.swift */,
 				1435CD2A1F33D2B6005E3AF7 /* ViewController.swift */,
 				1435CD2C1F33D2B6005E3AF7 /* Main.storyboard */,
@@ -123,6 +130,16 @@
 				1435CD4A1F33D2B6005E3AF7 /* Info.plist */,
 			);
 			path = "custom-textfield-class-testUITests";
+			sourceTree = "<group>";
+		};
+		1435CD5C1F33D350005E3AF7 /* Custom Class */ = {
+			isa = PBXGroup;
+			children = (
+				1435CD581F33D34A005E3AF7 /* BounceButton.swift */,
+				1435CD591F33D34A005E3AF7 /* DesignableButton.swift */,
+				1435CD561F33D315005E3AF7 /* CustomTextFieldClass.swift */,
+			);
+			name = "Custom Class";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +277,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1435CD2B1F33D2B6005E3AF7 /* ViewController.swift in Sources */,
+				1435CD5A1F33D34A005E3AF7 /* BounceButton.swift in Sources */,
 				1435CD291F33D2B6005E3AF7 /* AppDelegate.swift in Sources */,
+				1435CD5B1F33D34A005E3AF7 /* DesignableButton.swift in Sources */,
+				1435CD571F33D315005E3AF7 /* CustomTextFieldClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "email-icon(56x64).png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "email-icon(112x128).png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "email-icon(224x256).png",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

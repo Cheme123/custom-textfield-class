@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1435CD241F33D2B6005E3AF7"
+               BuildableName = "custom-textfield-class-test.app"
+               BlueprintName = "custom-textfield-class-test"
+               ReferencedContainer = "container:custom-textfield-class-test.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1435CD381F33D2B6005E3AF7"
+               BuildableName = "custom-textfield-class-testTests.xctest"
+               BlueprintName = "custom-textfield-class-testTests"
+               ReferencedContainer = "container:custom-textfield-class-test.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1435CD431F33D2B6005E3AF7"
+               BuildableName = "custom-textfield-class-testUITests.xctest"
+               BlueprintName = "custom-textfield-class-testUITests"
+               ReferencedContainer = "container:custom-textfield-class-test.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1435CD241F33D2B6005E3AF7"
+            BuildableName = "custom-textfield-class-test.app"
+            BlueprintName = "custom-textfield-class-test"
+            ReferencedContainer = "container:custom-textfield-class-test.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1435CD241F33D2B6005E3AF7"
+            BuildableName = "custom-textfield-class-test.app"
+            BlueprintName = "custom-textfield-class-test"
+            ReferencedContainer = "container:custom-textfield-class-test.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1435CD241F33D2B6005E3AF7"
+            BuildableName = "custom-textfield-class-test.app"
+            BlueprintName = "custom-textfield-class-test"
+            ReferencedContainer = "container:custom-textfield-class-test.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
