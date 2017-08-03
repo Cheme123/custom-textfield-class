@@ -12,6 +12,7 @@ import UIKit
 class CustomTextFieldClass: UITextField {
     
     // ***** IB DESIGNABLES *****
+    // commit change
 
     // Handles the corner radius of the textField
     @IBInspectable var cornerRadius: CGFloat = 0 {
