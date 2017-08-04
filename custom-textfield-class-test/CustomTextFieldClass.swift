@@ -1,5 +1,5 @@
 //
-//  DesignableTextField.swift
+//  CustomTextFieldClass.swift
 //  Veganize
 //
 //  Created by Miguel Angel on 4/27/17.
@@ -76,7 +76,7 @@ class CustomTextFieldClass: UITextField {
             createRightImage()
         }
     }
-    // Controls the image height of the right image
+    // Controls the image height of the rightImage
     // starts at 20 (standard) can be changed
     @IBInspectable var rightImageWidth: CGFloat = 20 {
         didSet{
@@ -94,7 +94,7 @@ class CustomTextFieldClass: UITextField {
             createRightImage()
         }
     }
-    // Controls the alpha(opacity) of the leftImage
+    // Controls the alpha(opacity) of the rightImage
     // starts at 1 (standard) can be changed
     @IBInspectable var rightImageAlpha: CGFloat = 1 {
         didSet{
@@ -102,10 +102,71 @@ class CustomTextFieldClass: UITextField {
         }
     }
     // ** END OF RIGHT IMAGE DESIGNABLES **
+
+    
+    // ** RIGHT BUTTON TEXT DESIGNABLES **
+    // Creates the button with the given title as label
+    @IBInspectable var rightButtonText: String? {
+        didSet{
+            createRightButton()
+        }
+    }
+    
+    // Controls the space between the right border of the textField towards the button created
+    @IBInspectable var rightButtonPadding: CGFloat = 0 {
+        didSet{
+            createRightButton()
+        }
+    }
+    
+    // Controls the width of the right button
+    // starts at 20 (standard) can be changed
+    @IBInspectable var rightButtonWidth: CGFloat = 60 {
+        didSet{
+            createRightButton()
+        }
+    }
+    
+    // Controls the height of the right button
+    // starts at 20 (standard) can be changed
+    @IBInspectable var rightButtonHeight: CGFloat = 20 {
+        didSet{
+            createRightButton()
+        }
+    }
+    // ** END OF RIGHT BUTTON DESIGNABLES **
     // ***** END IB DESIGNABLES *****
 
     
     // ***** FUNCTIONS *****
+    
+    // CREATE RIGHT BUTTON
+    // PURPOSE: creates an button, which title is set by the @IBDesignable "rightButtonText", and assigns it to rightView of the textField
+    private func createRightButton() {
+        // checks if there is a String 
+        if rightButtonText != "" {
+            // enables the left view mode of the textField
+            rightViewMode = .always
+            
+            //creation of the actual button using @IBDesignables: rightButtonPadding, rightButtonWidth, rightButtonHeight
+            let changeTextButton = DesignableButton(frame: CGRect(x: rightButtonPadding, y: 0, width: rightButtonWidth, height: rightButtonHeight))
+            
+            // assigns the function that will occur when the button is pressed -> rightButtonAction
+            changeTextButton.addTarget(self, action: #selector(rightButtonAction), for: .touchUpInside)
+            
+            // Atrributes: @IBDesignables: rightButtonTitle, rightButtonLabelColor, rightLabelFontSize
+            changeTextButton.setTitle(rightButtonText, for: .normal)
+            changeTextButton.setTitleColor(UIColor.lightGray, for: .normal)
+            changeTextButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+            
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 30))
+            view.addSubview(changeTextButton)
+            rightView = changeTextButton
+        }
+    }
+    func rightButtonAction() {
+        
+    }
     
     // CREATE LEFT IMAGE
     // PURPOSE: creates an imageView, which image is set by the @IBDesignable "leftImage", and assigns it to leftView of the textField
@@ -134,6 +195,7 @@ class CustomTextFieldClass: UITextField {
             // no image set
             leftViewMode = .never
         }
+        // Placeholder Text Attribute
          attributedPlaceholder = NSAttributedString(string: placeholder != nil ? placeholder! : "", attributes: [NSForegroundColorAttributeName: tintColor])
     }
     
@@ -164,6 +226,7 @@ class CustomTextFieldClass: UITextField {
             // no image set
             rightViewMode = .never
         }
+        // Placeholder Text Attribute
          attributedPlaceholder = NSAttributedString(string: placeholder != nil ? placeholder! : "", attributes: [NSForegroundColorAttributeName: tintColor])
     }
     
