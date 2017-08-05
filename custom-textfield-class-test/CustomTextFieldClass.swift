@@ -111,6 +111,20 @@ class CustomTextFieldClass: UITextField {
             createRightButton()
         }
     }
+    // Controls the color of the button title
+    @IBInspectable var rightButtonTextColor: UIColor?  {
+        didSet{
+            createRightButton()
+        }
+    }
+    
+    // Controls the font of the button title
+    // starts at 12 (standard) can be changed
+    @IBInspectable var rightButtonFont: CGFloat = 12  {
+        didSet{
+            createRightButton()
+        }
+    }
     
     // Controls the space between the right border of the textField towards the button created
     @IBInspectable var rightButtonPadding: CGFloat = 0 {
@@ -156,16 +170,16 @@ class CustomTextFieldClass: UITextField {
             
             // Atrributes: @IBDesignables: rightButtonTitle, rightButtonLabelColor, rightLabelFontSize
             changeTextButton.setTitle(rightButtonText, for: .normal)
-            changeTextButton.setTitleColor(UIColor.lightGray, for: .normal)
-            changeTextButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+            changeTextButton.setTitleColor(rightButtonTextColor, for: .normal)
+            changeTextButton.titleLabel?.font = UIFont.systemFont(ofSize: rightButtonFont)
             
-            let view = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 30))
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: rightButtonWidth, height: rightButtonHeight))
             view.addSubview(changeTextButton)
             rightView = changeTextButton
         }
     }
     func rightButtonAction() {
-        
+        print("Right Button Worked")
     }
     
     // CREATE LEFT IMAGE
