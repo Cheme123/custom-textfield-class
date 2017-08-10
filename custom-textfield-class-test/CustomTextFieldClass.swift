@@ -30,32 +30,32 @@ class CustomTextFieldClass: UITextField {
     }
     // Controls the image height of the left image
     // starts at 20 (standard) can be changed
-    @IBInspectable var leftImageHeight: CGFloat = 20 {
+    @IBInspectable var LImageHeight: CGFloat = 20 {
         didSet{
             createLeftImage()
         }
     }
     // Controls the image height of the right image
     // starts at 20 (standard) can be changed
-    @IBInspectable var leftImageWidth: CGFloat = 20 {
+    @IBInspectable var LImageWidth: CGFloat = 20 {
         didSet{
             createLeftImage()
         }
     }
     // Controls the space between the left border of the textField towards the image created
-    @IBInspectable var leftImagePadding: CGFloat = 0 {
+    @IBInspectable var LImagePadding: CGFloat = 0 {
         didSet{
             createLeftImage()
         }
     }
-    @IBInspectable var leftImageTintColor: UIColor? {
+    @IBInspectable var LImageTint: UIColor? {
         didSet{
             createLeftImage()
         }
     }
     // Controls the alpha(opacity) of the leftImage
     // starts at 1 (standard) can be changed
-    @IBInspectable var leftImageAlpha: CGFloat = 1 {
+    @IBInspectable var LImageAlpha: CGFloat = 1 {
         didSet{
             createLeftImage()
         }
@@ -71,32 +71,32 @@ class CustomTextFieldClass: UITextField {
     }
     // Controls the image height of the left image
     // starts at 20 (standard) can be changed
-    @IBInspectable var rightImageHeight: CGFloat = 20 {
+    @IBInspectable var RImageHeight: CGFloat = 20 {
         didSet{
             createRightImage()
         }
     }
     // Controls the image height of the rightImage
     // starts at 20 (standard) can be changed
-    @IBInspectable var rightImageWidth: CGFloat = 20 {
+    @IBInspectable var RImageWidth: CGFloat = 20 {
         didSet{
             createRightImage()
         }
     }
     // Controls the space between the left border of the textField towards the image created
-    @IBInspectable var rightImagePadding: CGFloat = 0 {
+    @IBInspectable var RImagePadding: CGFloat = 0 {
         didSet{
             createRightImage()
         }
     }
-    @IBInspectable var rightImageTintColor: UIColor? {
+    @IBInspectable var RImageTint: UIColor? {
         didSet{
             createRightImage()
         }
     }
     // Controls the alpha(opacity) of the rightImage
     // starts at 1 (standard) can be changed
-    @IBInspectable var rightImageAlpha: CGFloat = 1 {
+    @IBInspectable var RImageAlpha: CGFloat = 1 {
         didSet{
             createRightImage()
         }
@@ -111,6 +111,14 @@ class CustomTextFieldClass: UITextField {
             createRightButton()
         }
     }
+    
+    // Creates the button with the given title as label
+    @IBInspectable var rightButtonImage: UIImage? {
+        didSet{
+            createRightButton()
+        }
+    }
+    
     // Controls the color of the button title
     @IBInspectable var rightButtonTextColor: UIColor?  {
         didSet{
@@ -148,17 +156,19 @@ class CustomTextFieldClass: UITextField {
             createRightButton()
         }
     }
+    
+    
     // ** END OF RIGHT BUTTON DESIGNABLES **
     // ***** END IB DESIGNABLES *****
 
-    
+
     // ***** FUNCTIONS *****
     
-    // CREATE RIGHT BUTTON
+    // CREATE RIGHT BUTTON WITH STRING
     // PURPOSE: creates an button, which title is set by the @IBDesignable "rightButtonText", and assigns it to rightView of the textField
     private func createRightButton() {
         // checks if there is a String 
-        if rightButtonText != "" {
+        if rightButtonText != "" || rightImage != nil {
             // enables the left view mode of the textField
             rightViewMode = .always
             
@@ -168,19 +178,23 @@ class CustomTextFieldClass: UITextField {
             // assigns the function that will occur when the button is pressed -> rightButtonAction
             changeTextButton.addTarget(self, action: #selector(rightButtonAction), for: .touchUpInside)
             
-            // Atrributes: @IBDesignables: rightButtonTitle, rightButtonLabelColor, rightLabelFontSize
+            // Atrributes: @IBDesignables: rightButtonTitle, rightButtonImage, rightButtonLabelColor, rightLabelFontSize
             changeTextButton.setTitle(rightButtonText, for: .normal)
             changeTextButton.setTitleColor(rightButtonTextColor, for: .normal)
             changeTextButton.titleLabel?.font = UIFont.systemFont(ofSize: rightButtonFont)
+            changeTextButton.setBackgroundImage(rightImage, for: .normal)
+            
             
             let view = UIView(frame: CGRect(x: 0, y: 0, width: rightButtonWidth, height: rightButtonHeight))
             view.addSubview(changeTextButton)
             rightView = changeTextButton
         }
     }
+    // Controls what happens when the rightButton is pressed
     func rightButtonAction() {
         print("Right Button Worked")
     }
+    // END OF RIGHT BUTTON FUNCTIONS
     
     // CREATE LEFT IMAGE
     // PURPOSE: creates an imageView, which image is set by the @IBDesignable "leftImage", and assigns it to leftView of the textField
@@ -191,17 +205,17 @@ class CustomTextFieldClass: UITextField {
             leftViewMode = .always
             
             //creation of the actual imageView using @IBDesignables: leftImagePadding, leftImageWidth, leftImageHeight
-            let leftImageView = UIImageView(frame: CGRect(x: leftImagePadding, y: 0, width: leftImageWidth, height: leftImageHeight))
+            let leftImageView = UIImageView(frame: CGRect(x: LImagePadding, y: 0, width: LImageWidth, height: LImageHeight))
             
             // assigns image (conditional to check if there is an image) to the leftImageView
             leftImageView.image = image
             
             // general attributes assigned in @IBDesignables
-            leftImageView.tintColor = leftImageTintColor
-            leftImageView.alpha = leftImageAlpha
+            leftImageView.tintColor = LImageTint
+            leftImageView.alpha = LImageAlpha
             
             // creates a view so that the image is correcly formatted and centered, and can be moved inside this view using @IBDesignable leftImagePadding
-            let view = UIView(frame: CGRect(x: 0, y: 0, width: leftImageWidth, height: leftImageHeight))
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: LImageWidth, height: LImageHeight))
             view.addSubview(leftImageView)
             leftView = view
             
@@ -209,7 +223,7 @@ class CustomTextFieldClass: UITextField {
             // no image set
             leftViewMode = .never
         }
-        // Placeholder Text Attribute
+        // Placeholder Text Attributes
          attributedPlaceholder = NSAttributedString(string: placeholder != nil ? placeholder! : "", attributes: [NSForegroundColorAttributeName: tintColor])
     }
     
@@ -222,17 +236,17 @@ class CustomTextFieldClass: UITextField {
             rightViewMode = .always
             
             //creation of the actual imageView using @IBDesignables: rightImagePadding, rightImageWidth, rightImageHeight
-            let rightImageView = UIImageView(frame: CGRect(x: rightImagePadding, y: 0, width: rightImageWidth, height: rightImageHeight))
+            let rightImageView = UIImageView(frame: CGRect(x: RImagePadding, y: 0, width: RImageWidth, height: RImageHeight))
             
             // assigns image (conditional to check if there is an image) to the leftImageView
             rightImageView.image = rightImage
             
             // general attributes assigned in @IBDesignables
-            rightImageView.tintColor = rightImageTintColor
-            rightImageView.alpha = rightImageAlpha
+            rightImageView.tintColor = RImageTint
+            rightImageView.alpha = RImageAlpha
             
             // creates a view so that the image is correcly formatted and centered, and can be moved inside this view using @IBDesignable leftImagePadding
-            let view = UIView(frame: CGRect(x: 0, y: 0, width: rightImageWidth, height: rightImageHeight))
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: RImageWidth, height: RImageHeight))
             view.addSubview(rightImageView)
             rightView = view
             
